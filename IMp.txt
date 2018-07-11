@@ -1,0 +1,27 @@
+Based on the verb api understands what to do, get post put delete. 
+RestFul API features
+  - Separation of client and server
+  - Server request are stateless
+  - Cacheable Requests
+  - Uniform Interface
+API Design
+  - So resource end points remains same and based on verb the actual method is called.
+  /Customers
+  - content type detemines the way you are sending the dat to the server
+  - Accept determines the datatype that is getting accepted by the consumer.
+  - Etag: helps in caching and detecting whether we have most recent data.
+Versioning of API
+  - Uri Path
+  - Query Parameter
+  - Content Negotiation
+  - Request Header
+Security of an API
+  - SSL Security in transit
+  - Cross Origin Calls
+		- Cross Domain Security
+		   - two approaches
+		      - Support JSONP as a format
+			  - Enable Cross-Origin Resource Sharing (CORS)
+  - Authorization/Authentication
+    
+			
