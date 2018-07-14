@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 
 namespace WebApplication1.Controllers
@@ -16,9 +12,9 @@ namespace WebApplication1.Controllers
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public object Get(int id)
         {
-            return "value";
+            return new { name = "value" };
         }
 
         // POST api/values
