@@ -1,4 +1,8 @@
-﻿using System.Web.Http;
+﻿using Newtonsoft.Json.Serialization;
+using System;
+using System.Linq;
+using System.Net.Http.Formatting;
+using System.Web.Http;
 
 namespace CountingKs
 {
@@ -22,6 +26,12 @@ namespace CountingKs
             // To avoid processing unexpected or malicious queries, use the validation settings on QueryableAttribute to validate incoming queries.
             // For more information, visit http://go.microsoft.com/fwlink/?LinkId=279712.
             //config.EnableQuerySupport();
+            var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().FirstOrDefault();
+            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
         }
     }
 }
+/*
+ * Currently results that we are getting are not in JSON Format so lets convert them in jSON
+ */

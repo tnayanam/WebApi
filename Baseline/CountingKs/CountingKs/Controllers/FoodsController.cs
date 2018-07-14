@@ -8,7 +8,7 @@ namespace CountingKs.Controllers
 {
     public class FoodsController : ApiController
     {
-        public List<Data.Entities.Food> Get()
+        public IEnumerable<Data.Entities.Food> Get()
         {
             var repo = new CountingKsRepository(new CountingKsContext());
             var results = repo.GetAllFoods()
