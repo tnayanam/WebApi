@@ -182,3 +182,14 @@ C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\bin\zh
 C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\obj\Debug\CountingKs.csprojResolveAssemblyReference.cache
 C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\obj\Debug\CountingKs.dll
 C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\obj\Debug\CountingKs.pdb
+C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\bin\Ninject.dll
+C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\bin\Ninject.Web.Common.dll
+C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\bin\Ninject.Web.Mvc.dll
+C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\bin\WebActivator.dll
+C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\bin\WebApiContrib.IoC.Ninject.dll
+C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\bin\Ninject.pdb
+C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\bin\Ninject.xml
+C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\bin\Ninject.Web.Common.pdb
+C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\bin\Ninject.Web.Common.xml
+C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\bin\Ninject.Web.Mvc.pdb
+C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs\bin\Ninject.Web.Mvc.xml
