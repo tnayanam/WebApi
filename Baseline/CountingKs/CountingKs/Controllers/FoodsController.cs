@@ -10,6 +10,8 @@ namespace CountingKs.Controllers
     {
         public IEnumerable<Data.Entities.Food> Get()
         {
+            // now here these two classes needs to be there, other wise
+            // we cannot work with this controller, HARD Depedencies
             var repo = new CountingKsRepository(new CountingKsContext());
             var results = repo.GetAllFoods()
                 .OrderBy(f => f.Description)
