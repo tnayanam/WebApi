@@ -1,0 +1,8 @@
+C:\Users\lenovo\Downloads\implementing-restful-aspdotnet-web-api\2-restful-aspdotnet-m1-exercise-files\Baseline\CountingKs\CountingKs.Data\bin\Debug\CountingKs.Data.dll.config
+C:\Users\lenovo\Downloads\implementing-restful-aspdotnet-web-api\2-restful-aspdotnet-m1-exercise-files\Baseline\CountingKs\CountingKs.Data\bin\Debug\CountingKs.Data.dll
+C:\Users\lenovo\Downloads\implementing-restful-aspdotnet-web-api\2-restful-aspdotnet-m1-exercise-files\Baseline\CountingKs\CountingKs.Data\bin\Debug\CountingKs.Data.pdb
+C:\Users\lenovo\Downloads\implementing-restful-aspdotnet-web-api\2-restful-aspdotnet-m1-exercise-files\Baseline\CountingKs\CountingKs.Data\bin\Debug\EntityFramework.dll
+C:\Users\lenovo\Downloads\implementing-restful-aspdotnet-web-api\2-restful-aspdotnet-m1-exercise-files\Baseline\CountingKs\CountingKs.Data\bin\Debug\EntityFramework.xml
+C:\Users\lenovo\Downloads\implementing-restful-aspdotnet-web-api\2-restful-aspdotnet-m1-exercise-files\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Downloads\implementing-restful-aspdotnet-web-api\2-restful-aspdotnet-m1-exercise-files\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.dll
+C:\Users\lenovo\Downloads\implementing-restful-aspdotnet-web-api\2-restful-aspdotnet-m1-exercise-files\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.pdb
