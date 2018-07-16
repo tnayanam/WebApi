@@ -14,7 +14,7 @@ namespace CountingKs.Controllers
         }
         public IEnumerable<Data.Entities.Food> Get()
         {
-            var results = _repo.GetAllFoods()
+            var results = _repo.GetAllFoodsWithMeasures()
                 .OrderBy(f => f.Description)
                 .Take(25)
                .ToList();

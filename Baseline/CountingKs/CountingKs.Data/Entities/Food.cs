@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace CountingKs.Data.Entities
 {
-  public class Food
-  {
-    public Food()
+    public class Food
     {
-      Measures = new List<Measure>();
+        public Food()
+        {
+            Measures = new List<Measure>();
+        }
+
+        public int Id { get; set; }
+        public string Description { get; set; }
+        //now here it goes to find for Food.. so we end up in a loop
+        public virtual ICollection<Measure> Measures { get; set; }
     }
-
-    public int Id { get; set; }
-    public string Description { get; set; }
-
-    public virtual ICollection<Measure> Measures { get; set; }
-  }
 }
