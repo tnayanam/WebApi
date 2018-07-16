@@ -9,9 +9,11 @@ namespace CountingKs.Controllers
     public class FoodsController : ApiController
     {
         private ICountingKsRepository _repo;
+        private ModelFactory _modelFactory;
         public FoodsController(ICountingKsRepository repo)
         {
             _repo = repo;
+            _modelFactory = new ModelFactory();
         }
         public IEnumerable<FoodModel> Get()
         {
@@ -19,15 +21,7 @@ namespace CountingKs.Controllers
                 .OrderBy(f => f.Description)
                 .Take(25)
                .ToList()
-               .Select(f => new FoodModel
-               {
-                   Description = f.Description,
-                   Measures = f.Measures.Select(m => new MeasureModel
-                   {
-                       Description = m.Description,
-                       Calories = m.Calories
-                   })
-               });
+               .Select(f => _modelFactory.Create(f));
             return results;
         }
     }
