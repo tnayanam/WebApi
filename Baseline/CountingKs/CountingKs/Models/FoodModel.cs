@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+// this is more like a view model
 namespace CountingKs.Models
 {
     public class FoodModel

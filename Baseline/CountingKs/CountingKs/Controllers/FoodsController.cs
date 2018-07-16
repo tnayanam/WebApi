@@ -17,12 +17,17 @@ namespace CountingKs.Controllers
         }
         public IEnumerable<FoodModel> Get()
         {
+            // here we mapped multiple food object which was comiong from backend to food model 
             var results = _repo.GetAllFoodsWithMeasures()
                 .OrderBy(f => f.Description)
                 .Take(25)
                .ToList()
                .Select(f => _modelFactory.Create(f));
             return results;
+        }
+        public FoodModel Get(int id)
+        {
+            return _modelFactory.Create(_repo.GetFood(id)); // we reused the same mapping for one food object which was coming from backend
         }
     }
 }
