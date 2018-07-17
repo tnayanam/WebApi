@@ -12,6 +12,9 @@ namespace CountingKs
         {
             // suppose you want the controller to hit is foods but the url you want is api/nutrition/foods then do below
             // changing the name of optional parameter {id} - {foodid} needs changes in the controller methods too
+            // http://localhost:8901/api/nutrition/foods?includeMeasures=false here this works fine even though it does not match the actual {foodid} as paramter. 
+            // why it works is because as soon as you out "?" in the url it knows it has to go to a method as if the URL was just http://localhost:8901/api/nutrition/foods
+            // and then whatever is passed after the ? is mapped to the methods thats getting called.
             config.Routes.MapHttpRoute(
                name: "Food",
                routeTemplate: "api/nutrition/foods/{foodsid}",

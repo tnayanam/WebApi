@@ -1,4 +1,5 @@
 ﻿using CountingKs.Data;
+using CountingKs.Data.Entities;
 using CountingKs.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,16 @@ namespace CountingKs.Controllers
             _repo = repo;
             _modelFactory = new ModelFactory();
         }
-        public IEnumerable<FoodModel> Get()
+        // we are using parameters to specify behaviour of below methods
+        public IEnumerable<FoodModel> Get(bool includeMeasures = true)
         {
+            IQueryable<Food> query;
+            if(includeMeasures)
+                query = _repo.GetAllFoodsWithMeasures();
+            else
+                query = _repo.GetAllFoods();
             // here we mapped multiple food object which was comiong from backend to food model 
-            var results = _repo.GetAllFoodsWithMeasures()
+            var results = query
                 .OrderBy(f => f.Description)
                 .Take(25)
                .ToList()
