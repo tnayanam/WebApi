@@ -10,11 +10,19 @@ namespace CountingKs
     {
         public static void Register(HttpConfiguration config)
         {
+            // suppose you want the controller to hit is foods but the url you want is api/nutrition/foods then do below
+            // changing the name of optional parameter {id} - {foodid} needs changes in the controller methods too
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+               name: "Food",
+               routeTemplate: "api/nutrition/foods/{foodsid}",
+               defaults: new {controller = "foods", foodsid = RouteParameter.Optional }
+               //constraints: new { foodsid = "/d+"} // this will make sure only the integer requests will make it to the controller
+           );
+            //config.Routes.MapHttpRoute(
+            //    name: "DefaultApi",
+            //    routeTemplate: "api/{controller}/{id}",
+            //    defaults: new { id = RouteParameter.Optional }
+            //);
 
             // Uncomment the following line of code to enable query support for actions with an IQueryable or IQueryable<T> return type.
             // To avoid processing unexpected or malicious queries, use the validation settings on QueryableAttribute to validate incoming queries.

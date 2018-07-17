@@ -14,3 +14,12 @@ C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs.Data\b
 C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.csprojResolveAssemblyReference.cache
 C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.dll
 C:\Users\lenovo\Desktop\demo\WebApi\WebApi\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.pdb
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs.Data\bin\Debug\CountingKs.Data.dll.config
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs.Data\bin\Debug\CountingKs.Data.dll
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs.Data\bin\Debug\CountingKs.Data.pdb
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs.Data\bin\Debug\EntityFramework.dll
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs.Data\bin\Debug\EntityFramework.xml
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.csproj.CoreCompileInputs.cache
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.csproj.CopyComplete
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.dll
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.pdb
