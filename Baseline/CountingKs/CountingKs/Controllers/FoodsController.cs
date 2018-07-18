@@ -32,9 +32,9 @@ namespace CountingKs.Controllers
                .Select(f => _modelFactory.Create(f));
             return results;
         }
-        public FoodModel Get(int foodsid)
+        public FoodModel Get(int foodid)
         {
-            return _modelFactory.Create(_repo.GetFood(foodsid)); // we reused the same mapping for one food object which was coming from backend
+            return _modelFactory.Create(_repo.GetFood(foodid)); // we reused the same mapping for one food object which was coming from backend
         }
     }
 }

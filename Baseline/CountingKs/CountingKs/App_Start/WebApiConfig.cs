@@ -17,10 +17,18 @@ namespace CountingKs
             // and then whatever is passed after the ? is mapped to the methods thats getting called.
             config.Routes.MapHttpRoute(
                name: "Food",
-               routeTemplate: "api/nutrition/foods/{foodsid}",
-               defaults: new {controller = "foods", foodsid = RouteParameter.Optional }
+               routeTemplate: "api/nutrition/foods/{foodid}",
+               defaults: new {controller = "foods", foodid = RouteParameter.Optional }
                //constraints: new { foodsid = "/d+"} // this will make sure only the integer requests will make it to the controller
            );
+            // here we have made the foodsID to be non optional but id is optional, so if user wants all the measures for a particular food the can skip the id but he obviously needs
+            // to provide the foodid
+            config.Routes.MapHttpRoute(
+             name: "Measures",
+             routeTemplate: "api/nutrition/foods/{foodid}/measures/{id}",
+             defaults: new { controller = "measures", id = RouteParameter.Optional }
+         //constraints: new { foodsid = "/d+"} // this will make sure only the integer requests will make it to the controller
+         );
             //config.Routes.MapHttpRoute(
             //    name: "DefaultApi",
             //    routeTemplate: "api/{controller}/{id}",
