@@ -7,34 +7,30 @@ using System.Web.Http;
 
 namespace CountingKs.Controllers
 {
-    public class FoodsController : ApiController
+    public class FoodsController : BaseApiController
     {
-        private ICountingKsRepository _repo;
-        private ModelFactory _modelFactory;
-        public FoodsController(ICountingKsRepository repo)
+        public FoodsController(ICountingKsRepository repo):base(repo)
         {
-            _repo = repo;
-            _modelFactory = new ModelFactory();
         }
         // we are using parameters to specify behaviour of below methods
         public IEnumerable<FoodModel> Get(bool includeMeasures = true)
         {
             IQueryable<Food> query;
             if(includeMeasures)
-                query = _repo.GetAllFoodsWithMeasures();
+                query = TheRepository.GetAllFoodsWithMeasures();
             else
-                query = _repo.GetAllFoods();
+                query = TheRepository.GetAllFoods();
             // here we mapped multiple food object which was comiong from backend to food model 
             var results = query
                 .OrderBy(f => f.Description)
                 .Take(25)
                .ToList()
-               .Select(f => _modelFactory.Create(f));
+               .Select(f => TheModelFactory.Create(f));
             return results;
         }
         public FoodModel Get(int foodid)
         {
-            return _modelFactory.Create(_repo.GetFood(foodid)); // we reused the same mapping for one food object which was coming from backend
+            return TheModelFactory.Create(TheRepository.GetFood(foodid)); // we reused the same mapping for one food object which was coming from backend
         }
     }
 }
@@ -48,6 +44,4 @@ namespace CountingKs.Controllers
  * 5. PM> Install-Package Ninject.MVC3 -Version 3.0.0.6
  * 6. Install-Package WebApiContrib.IoC.Ninject -Version 0.9.3.0
  * 7. Now make changes in NinjectWebCommon.cs
- * 
- * 
  */
