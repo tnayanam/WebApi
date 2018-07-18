@@ -3,6 +3,7 @@
 
 namespace CountingKs.App_Start
 {
+    using CountingKs.Services;
     using Data;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
     using Ninject;
@@ -65,6 +66,7 @@ namespace CountingKs.App_Start
             // as long as we hace a "TO" to it, it will be mapped and a new instance will be provided.
             kernel.Bind<Data.ICountingKsRepository>().To<CountingKsRepository>();
             kernel.Bind<CountingKsContext>().To<CountingKsContext>();
+            kernel.Bind<ICountingKsIdentityService>().To<CountingKsIdentityService>();
         }
     }
 }
