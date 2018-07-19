@@ -40,7 +40,8 @@ namespace CountingKs.Models
                 Url = _urlHelper.Link("Diaries", new { diaryid = diary.CurrentDate.ToString("yyyy-MM-dd") }), // no matter how the date is stored in DB we want to show te url in such a way
                 // of what user should type in browser to hit the corrsponding function. So we needed to convert into this format now by seeing the URI in output user knows
                 // in what format he should be making subsequent request.
-                CurrentDate = diary.CurrentDate
+                CurrentDate = diary.CurrentDate,
+                Entries = diary.Entries.Select(e => Create(e))
             };
         }
         public DiaryEntryModel Create(DiaryEntry entry)

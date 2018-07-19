@@ -9,5 +9,6 @@ namespace CountingKs.Models
     {
         public string Url { get; set; }
         public DateTime CurrentDate { get; set; }
+        public IEnumerable<DiaryEntryModel> Entries { get; set; }
     }
 }
