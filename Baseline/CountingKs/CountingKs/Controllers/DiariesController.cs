@@ -47,6 +47,5 @@ namespace CountingKs.Controllers
             }
             return Request.CreateResponse(HttpStatusCode.OK, TheModelFactory.Create(result));
         }
-
     }
 }
