@@ -41,5 +41,10 @@ namespace CountingKs.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, TheModelFactory.Create(result));
         }
+
+        public object Post(DateTime diaryId, [FromBody]DiaryEntryModel model)
+        {
+            return 6;
+        }
     }
 }
