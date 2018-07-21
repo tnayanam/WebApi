@@ -1,10 +1,5 @@
 ﻿using CountingKs.Data;
 using CountingKs.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace CountingKs.Controllers
@@ -31,7 +26,7 @@ namespace CountingKs.Controllers
             {
                 if (_modelFactory == null)
                 {
-                    _modelFactory = new ModelFactory(this.Request);
+                    _modelFactory = new ModelFactory(this.Request, TheRepository);
                 }
                 return _modelFactory;
             }

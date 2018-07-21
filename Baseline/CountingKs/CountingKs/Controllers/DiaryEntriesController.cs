@@ -42,9 +42,29 @@ namespace CountingKs.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, TheModelFactory.Create(result));
         }
 
-        public object Post(DateTime diaryId, [FromBody]DiaryEntryModel model)
+        public HttpResponseMessage Post(DateTime diaryId, [FromBody]DiaryEntryModel model)
         {
-            return 6;
+            try
+            {
+                var entity = TheModelFactory.Parse(model);
+                if (entity == null)
+                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Could   not  parse the diary entry");
+                var diary = TheRepository.GetDiary(_identityService.CurrentUser, diaryId);
+                if (diary == null)
+                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Could   not  parse the diary entry");
+                if (diary.Entries.Any(e => e.Measure.Id == entity.Measure.Id))
+                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Duplicate measure not allowed");
+                diary.Entries.Add(entity);
+                if (!TheRepository.SaveAll())
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Could not save to the DB");
+                }
+                return Request.CreateResponse(HttpStatusCode.Created, TheModelFactory.Create(entity));
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
         }
     }
 }
