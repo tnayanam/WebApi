@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Routing;
 
 namespace CountingKs.Controllers
 {
@@ -27,14 +28,21 @@ namespace CountingKs.Controllers
                 .OrderBy(f => f.Description);
             var totalCount = baseQuery.Count();
             var totalPages = Math.Ceiling((double)totalCount / PAGE_SIZE);
+            // whenever you want to create a link manually
+            var helper = new UrlHelper(Request);
+            var prevUrl = page > 0? helper.Link("Food", new { page = page - 1 }):"";
+            var nextUrl = page <totalPages -1 ? helper.Link("Food", new { page = page + 1 }): "";
+
             var results = baseQuery
                 .Skip(PAGE_SIZE*page)
                 .Take(PAGE_SIZE)
                .ToList()
                .Select(f => TheModelFactory.Create(f));
             return new
-            {TotalPages = totalPages,
+            { TotalPages = totalPages,
                 TotalCount = totalCount,
+                PrevPageUrl = prevUrl,
+                NextPageUrl = nextUrl,
                 Results = results
                 
             };
