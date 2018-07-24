@@ -69,11 +69,14 @@ namespace CountingKs.Models
                 {
                     entry.Quantity = model.Quantity;
                 }
-                var uri = new Uri(model.MeasureUrl);
-                var measureId = int.Parse(uri.Segments.Last());
-                var measure = _repo.GetMeasure(measureId);
-                entry.Measure = measure;
-                entry.FoodItem = measure.Food;
+                if (!string.IsNullOrEmpty(model.MeasureUrl))
+                {
+                    var uri = new Uri(model.MeasureUrl);
+                    var measureId = int.Parse(uri.Segments.Last());
+                    var measure = _repo.GetMeasure(measureId);
+                    entry.Measure = measure;
+                    entry.FoodItem = measure.Food;
+                }
                 return entry;
             }
             catch

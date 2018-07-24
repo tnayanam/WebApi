@@ -90,5 +90,33 @@ namespace CountingKs.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
+        // patch allows a partial update where as put allows full object to be passed in. here we are updating partially so use patch
+        [HttpPut]
+        [HttpPatch]
+        public HttpResponseMessage Patch(DateTime diaryId, int id, [FromBody] DiaryEntryModel model)
+        {
+            try
+            {
+                var entity = TheRepository.GetDiaryEntry(_identityService.CurrentUser, diaryId, id);
+                if (entity == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound);
+                var parsedValue = TheModelFactory.Parse(model);
+                if (parsedValue == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
+                if(entity.Quantity != parsedValue.Quantity)
+                {
+                    entity.Quantity = model.Quantity;
+                    if (TheRepository.SaveAll())
+                    {
+                        return Request.CreateResponse(HttpStatusCode.OK);
+                    }
+                }
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+            catch (Exception ex)
+            {
+
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest,ex);
+            }
+        }
     }
 }
