@@ -84,5 +84,14 @@ namespace CountingKs.Models
                 return null;
             }
         }
+
+        public DiarySummaryModel CreateSummary(Diary diary)
+        {
+            return new DiarySummaryModel()
+            {
+                DiaryDate = diary.CurrentDate,
+                TotalCalories = Math.Round(diary.Entries.Sum(e => e.Quantity * e.Measure.Calories))
+            };
+        }
     }
 }
