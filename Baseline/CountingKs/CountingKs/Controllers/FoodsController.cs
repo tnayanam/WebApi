@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Routing;
+using System.Web.Mvc;
 
 namespace CountingKs.Controllers
 {
@@ -29,7 +30,7 @@ namespace CountingKs.Controllers
             var totalCount = baseQuery.Count();
             var totalPages = Math.Ceiling((double)totalCount / PAGE_SIZE);
             // whenever you want to create a link manually
-            var helper = new UrlHelper(Request);
+            var helper = new System.Web.Http.Routing.UrlHelper(Request);
             var prevUrl = page > 0? helper.Link("Food", new { page = page - 1 }):"";
             var nextUrl = page <totalPages -1 ? helper.Link("Food", new { page = page + 1 }): "";
 
