@@ -9,11 +9,11 @@ using System.Web.Http.Dispatcher;
 
 namespace CountingKs.Services
 {
-    public class CountingKsControllerSelector:DefaultHttpControllerSelector
+    public class CountingKsControllerSelector : DefaultHttpControllerSelector
     {
         private HttpConfiguration _config;
 
-        public CountingKsControllerSelector(HttpConfiguration config): base(config)
+        public CountingKsControllerSelector(HttpConfiguration config) : base(config)
         {
             _config = config;
         }
@@ -27,26 +27,38 @@ namespace CountingKs.Services
             var controllerName = (string)routeData.Values["controller"]; // get the controller name from route
 
             HttpControllerDescriptor descriptor;
-            if(controllers.TryGetValue(controllerName, out descriptor))
+            if (controllers.TryGetValue(controllerName, out descriptor))
             {
-                var version = GetVersionFromQueryString(request);
+                // var version = GetVersionFromQueryString(request);
+                var version = GetVersionFromHeader(request);
                 var newName = string.Concat(controllerName, "V", version);
                 HttpControllerDescriptor versionDescriptor;
                 if (controllers.TryGetValue(newName, out versionDescriptor))
                 {
                     return versionDescriptor; // line 1
                 }
-                    return descriptor; // line 2
+                return descriptor; // line 2
             }
-
             return null;
+        }
+
+        private object GetVersionFromHeader(HttpRequestMessage request)
+        {
+            const string HEADER_NAME = "X-CountingKs-Version";
+            if (request.Headers.Contains(HEADER_NAME))
+            {
+                var header = request.Headers.GetValues(HEADER_NAME).FirstOrDefault();
+                if (header != null)
+                    return header;
+            }
+            return "1";
         }
 
         private string GetVersionFromQueryString(HttpRequestMessage request)
         {
             var query = HttpUtility.ParseQueryString(request.RequestUri.Query);
             var version = query["v"];
-            if(version!=null)
+            if (version != null)
             {
                 return version; // line 4
             }
@@ -55,5 +67,5 @@ namespace CountingKs.Services
     }
 }
 //http://localhost:8901/api/nutrition/foods/4479/measures/7269?v=2 => this wil hit line 4 and then line1 because we have measurev2
-  //  http://localhost:8901/api/nutrition/foods/4479/measures/7269?v=1 => this will hit line 4 and then line 2 because we dont have mesasurev1 so default meausrecontroller will be called
-   // http://localhost:8901/api/nutrition/foods/4479/measures/7269 // => this wilhit line 3 and line 2
+//  http://localhost:8901/api/nutrition/foods/4479/measures/7269?v=1 => this will hit line 4 and then line 2 because we dont have mesasurev1 so default meausrecontroller will be called
+// http://localhost:8901/api/nutrition/foods/4479/measures/7269 // => this wilhit line 3 and line 2

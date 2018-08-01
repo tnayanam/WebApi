@@ -20,7 +20,6 @@ namespace CountingKs.Controllers
             // we could have done below stuff in base controller but the food and mesaure does not need an user so better to do it at this level.
             _identityService = identityService;
         }
-
         public IEnumerable<DiaryModel> Get()
         {
             var userName = _identityService.CurrentUser;
