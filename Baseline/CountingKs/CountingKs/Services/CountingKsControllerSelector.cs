@@ -30,7 +30,8 @@ namespace CountingKs.Services
             if (controllers.TryGetValue(controllerName, out descriptor))
             {
                 // var version = GetVersionFromQueryString(request);
-                var version = GetVersionFromHeader(request);
+                //var version = GetVersionFromHeader(request);
+                var version = GetVersionFromAcceptHeader(request);
                 var newName = string.Concat(controllerName, "V", version);
                 HttpControllerDescriptor versionDescriptor;
                 if (controllers.TryGetValue(newName, out versionDescriptor))
@@ -40,6 +41,23 @@ namespace CountingKs.Services
                 return descriptor; // line 2
             }
             return null;
+        }
+
+        private object GetVersionFromAcceptHeader(HttpRequestMessage request)
+        {
+            var accept = request.Headers.Accept;
+
+            foreach(var mime in accept)
+            {
+                if(mime.MediaType == "application/json")
+                {
+                    var value = mime.Parameters.Where(v => v.Name
+                    .Equals("version", StringComparison.OrdinalIgnoreCase))
+                    .FirstOrDefault();
+                    return value.Value;
+                }
+            }
+            return "1";
         }
 
         private object GetVersionFromHeader(HttpRequestMessage request)
