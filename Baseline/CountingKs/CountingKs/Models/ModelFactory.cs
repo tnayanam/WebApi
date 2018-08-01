@@ -125,7 +125,7 @@ namespace CountingKs.Models
         {
             return new MeasureV2Model
             {
-                Url = _urlHelper.Link("Measures2", new { foodid = measure.Food.Id, id = measure.Id }), // this Measures2 name needs to be mapped in route.config file route name.
+                Url = _urlHelper.Link("Measures", new { foodid = measure.Food.Id, id = measure.Id }), // this Measures2 name needs to be mapped in route.config file route name.
                 Description = measure.Description,
                 Calories = measure.Calories,
                 Carbohydrates = measure.Carbohydrates,
