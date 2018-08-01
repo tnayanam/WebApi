@@ -120,5 +120,24 @@ namespace CountingKs.Models
                 TotalCalories = Math.Round(diary.Entries.Sum(e => e.Quantity * e.Measure.Calories))
             };
         }
+
+        public MeasureV2Model CreateV2(Measure measure)
+        {
+            return new MeasureV2Model
+            {
+                Url = _urlHelper.Link("Measures2", new { foodid = measure.Food.Id, id = measure.Id }), // this Measures2 name needs to be mapped in route.config file route name.
+                Description = measure.Description,
+                Calories = measure.Calories,
+                Carbohydrates = measure.Carbohydrates,
+                Cholestrol = measure.Cholestrol,
+                Fiber = measure.Fiber,
+                Iron = measure.Iron,
+                Protein = measure.Protein,
+                SaturatedFat = measure.SaturatedFat,
+                Sodium = measure.Sodium,
+                Sugar = measure.Sugar,
+                TotalFat = measure.TotalFat
+            };
+        }
     }
 }

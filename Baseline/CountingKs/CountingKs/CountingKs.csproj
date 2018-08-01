@@ -211,6 +211,7 @@
     <Compile Include="Controllers\DiariesController.cs" />
     <Compile Include="Controllers\DiaryEntriesController.cs" />
     <Compile Include="Controllers\DiarySummaryController.cs" />
+    <Compile Include="Controllers\MeasuresV2Controller.cs" />
     <Compile Include="Filters\RequireHttpsAttribute.cs" />
     <Compile Include="Models\DiarySummaryModel.cs" />
     <Compile Include="Controllers\FoodsController.cs" />
@@ -224,6 +225,7 @@
     <Compile Include="Models\DiaryEntryModel.cs" />
     <Compile Include="Models\DiaryModel.cs" />
     <Compile Include="Models\FoodModel.cs" />
+    <Compile Include="Models\MeasureV2Model.cs" />
     <Compile Include="Models\MeasureModel.cs" />
     <Compile Include="Models\ModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

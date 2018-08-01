@@ -16,7 +16,7 @@ public static class WebApiConfig
         // and then whatever is passed after the ? is mapped to the methods thats getting called.
         config.Routes.MapHttpRoute(
            name: "Food",
-           routeTemplate: "api/nutrition/foods/{foodid}",
+           routeTemplate: "api/v1/nutrition/foods/{foodid}",
            defaults: new { controller = "foods", foodid = RouteParameter.Optional }
        //constraints: new { foodsid = "/d+"} // this will make sure only the integer requests will make it to the controller
        );
@@ -24,25 +24,31 @@ public static class WebApiConfig
         // to provide the foodid
         config.Routes.MapHttpRoute(
          name: "Measures",
-         routeTemplate: "api/nutrition/foods/{foodid}/measures/{id}",
+         routeTemplate: "api/v1/nutrition/foods/{foodid}/measures/{id}",
          defaults: new { controller = "measures", id = RouteParameter.Optional }
      //constraints: new { foodsid = "/d+"} // this will make sure only the integer requests will make it to the controller
      );
         config.Routes.MapHttpRoute(
+     name: "Measures2",
+     routeTemplate: "api/v2/nutrition/foods/{foodid}/measures/{id}",
+     defaults: new { controller = "measuresv2", id = RouteParameter.Optional }
+ //constraints: new { foodsid = "/d+"} // this will make sure only the integer requests will make it to the controller
+ );
+        config.Routes.MapHttpRoute(
        name: "Diaries",
        routeTemplate: "api/user/diaries/{diaryid}",
        defaults: new { controller = "diaries", diaryid = RouteParameter.Optional }
-   );
+     );
         config.Routes.MapHttpRoute(
         name: "DiaryEntries",
         routeTemplate: "api/user/diaries/{diaryid}/entries/{id}",
         defaults: new { controller = "diaryentries", id = RouteParameter.Optional }
     );
-        config.Routes.MapHttpRoute(
+    config.Routes.MapHttpRoute(
      name: "DiarySummary",
      routeTemplate: "api/user/diaries/{diaryid}/summary",
      defaults: new { controller = "diarysummary" }
- );
+    );
         //config.Routes.MapHttpRoute(
         //    name: "DefaultApi",
         //    routeTemplate: "api/{controller}/{id}",
