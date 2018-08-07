@@ -409,3 +409,5 @@ C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\Ca
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\CacheCow.Server.dll
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\CacheCow.Common.xml
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\CacheCow.Server.xml
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\CacheCow.Server.EntityTagStore.SqlServer.dll
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\CacheCow.Server.EntityTagStore.SqlServer.xml

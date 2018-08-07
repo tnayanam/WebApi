@@ -1,8 +1,10 @@
 ﻿using CacheCow.Server;
+using CacheCow.Server.EntityTagStore.SqlServer;
 using CountingKs.Filters;
 using CountingKs.Services;
 using Newtonsoft.Json.Serialization;
 using System;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;
@@ -72,7 +74,10 @@ public static class WebApiConfig
         config.Services.Replace(typeof(IHttpControllerSelector),
             new CountingKsControllerSelector(config));
         // cache
-        var cacheHandler = new CachingHandler();
+        
+        var connString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        var etagStore = new SqlServerEntityTagStore(connString);
+        var cacheHandler = new CachingHandler(etagStore);
         config.MessageHandlers.Add(cacheHandler);
 
     }
@@ -85,3 +90,9 @@ public static class WebApiConfig
 // image 1: first request
 // image 2: another request if made will return only 304 becuase data is supposed to be already with the client
 // so when we are making get or delete we need to add that etag in if-none-match header
+// Now we needed to store etag somehwere so first install
+// PM> install-package CacheCow.Server.EntityTagStore.SqlServer -version 0.4.1
+// then make the code changs and then copy the script which will cvreate the
+// database to store the etag execute the script in SQL Server
+// located at location:" C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\packages\CacheCow.Server.EntityTagStore.SqlServer.0.4.1\scripts
+// and now when you make the request the etag will not jave "w/" because now its persistece
