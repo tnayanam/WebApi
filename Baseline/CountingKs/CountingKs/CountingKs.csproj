@@ -221,6 +221,7 @@
     <Compile Include="Controllers\DiaryEntriesController.cs" />
     <Compile Include="Controllers\DiarySummaryController.cs" />
     <Compile Include="Controllers\MeasuresV2Controller.cs" />
+    <Compile Include="Convertor\LinkModelConvertor.cs" />
     <Compile Include="Filters\RequireHttpsAttribute.cs" />
     <Compile Include="Models\DiarySummaryModel.cs" />
     <Compile Include="Controllers\FoodsController.cs" />

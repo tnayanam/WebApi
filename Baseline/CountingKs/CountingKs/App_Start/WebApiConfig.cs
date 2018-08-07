@@ -1,5 +1,6 @@
 ﻿using CacheCow.Server;
 using CacheCow.Server.EntityTagStore.SqlServer;
+using CountingKs.Convertor;
 using CountingKs.Filters;
 using CountingKs.Services;
 using Newtonsoft.Json.Serialization;
@@ -66,6 +67,7 @@ public static class WebApiConfig
                "application/json"));
         var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().FirstOrDefault();
         jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+        jsonFormatter.SerializerSettings.Converters.Add(new LinkModelConvertor());
 #if !DEBUG
         // force https
         config.Filters.Add(new RequireHttpsAttribute());
