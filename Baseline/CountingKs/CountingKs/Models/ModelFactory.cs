@@ -159,3 +159,6 @@ namespace CountingKs.Models
         }
     }
 }
+// Problem here is that in serialization, even if they are not needed we are showing them
+// I mean suppose if by default all the rel is "GET" then out Response will be populated with "Get" and also if isTemplated is true then only we want to show it
+// but out serialization that is provided by default does not understand all this and will show everything in each response
