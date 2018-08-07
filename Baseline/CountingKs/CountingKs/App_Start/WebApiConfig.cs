@@ -1,4 +1,5 @@
-﻿using CountingKs.Filters;
+﻿using CacheCow.Server;
+using CountingKs.Filters;
 using CountingKs.Services;
 using Newtonsoft.Json.Serialization;
 using System;
@@ -70,6 +71,17 @@ public static class WebApiConfig
         // replaces the default controller selector by ours.
         config.Services.Replace(typeof(IHttpControllerSelector),
             new CountingKsControllerSelector(config));
+        // cache
+        var cacheHandler = new CachingHandler();
+        config.MessageHandlers.Add(cacheHandler);
 
     }
 }
+// E-Tag
+// 1. get the package PM> install-package cachecow.server -version 0.4.6
+// theen make the code chnges in this file
+// now GO TO fiddler and make the requests
+// you will seee an etag returned but it will be with "w/ thius w means it is weak e tag and it is very temporary
+// image 1: first request
+// image 2: another request if made will return only 304 becuase data is supposed to be already with the client
+// so when we are making get or delete we need to add that etag in if-none-match header

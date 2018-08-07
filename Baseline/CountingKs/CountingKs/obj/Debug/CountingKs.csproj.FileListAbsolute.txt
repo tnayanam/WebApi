@@ -405,3 +405,7 @@ C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\WebApi\Baseline\CountingKs\CountingKs
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\WebApi\Baseline\CountingKs\CountingKs\obj\Debug\CountingKs.csproj.CopyComplete
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\WebApi\Baseline\CountingKs\CountingKs\obj\Debug\CountingKs.dll
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\WebApi\Baseline\CountingKs\CountingKs\obj\Debug\CountingKs.pdb
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\CacheCow.Common.dll
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\CacheCow.Server.dll
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\CacheCow.Common.xml
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\CacheCow.Server.xml
