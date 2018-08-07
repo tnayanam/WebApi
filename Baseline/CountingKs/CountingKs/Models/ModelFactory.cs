@@ -1,6 +1,7 @@
 ﻿using CountingKs.Data;
 using CountingKs.Data.Entities;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http.Routing;
@@ -38,16 +39,33 @@ namespace CountingKs.Models
         }
 
         public DiaryModel Create(Diary diary)
+
         {
             return new DiaryModel
             {
-                Url = _urlHelper.Link("Diaries", new { diaryid = diary.CurrentDate.ToString("yyyy-MM-dd") }), // no matter how the date is stored in DB we want to show te url in such a way
+                Links = new List<LinkModel>
+                {
+                    CreateLink(_urlHelper.Link("Diaries", new { diaryid = diary.CurrentDate.ToString("yyyy-MM-dd") }), "self"),
+                    CreateLink(_urlHelper.Link("DiaryEntries", new { diaryid = diary.CurrentDate.ToString("yyyy-MM-dd") }), "newDiaryEntry", "POST")
+                },
                 // of what user should type in browser to hit the corrsponding function. So we needed to convert into this format now by seeing the URI in output user knows
                 // in what format he should be making subsequent request.
                 CurrentDate = diary.CurrentDate,
                 Entries = diary.Entries.Select(e => Create(e))
             };
         }
+
+        public LinkModel CreateLink(string href, string rel, string method = "GET", bool isTemplated = false)
+        {
+            return new LinkModel
+            {
+                Href = href,
+                Rel = rel,
+                IsTemplated = isTemplated,
+                Method = method
+            };
+        }
+
         public DiaryEntryModel Create(DiaryEntry entry)
         {
             return new DiaryEntryModel
@@ -89,10 +107,10 @@ namespace CountingKs.Models
             try
             {
                 var entity = new Diary();
-
-                if (!string.IsNullOrWhiteSpace(model.Url))
+                var selfLink = model.Links.Where(l => l.Rel == "self").FirstOrDefault();
+                if (selfLink!= null && !string.IsNullOrWhiteSpace(selfLink.Href))
                 {
-                    var uri = new Uri(model.Url);
+                    var uri = new Uri(selfLink.Href);
                     entity.Id = int.Parse(uri.Segments.Last());
                 }
 
