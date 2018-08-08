@@ -14,7 +14,20 @@ namespace CountingKs.Controllers
         {
         }
 
+     //   [Route("api/stats")]
         public HttpResponseMessage Get()
+        {
+            var results = new
+            {
+                NumFoods = TheRepository.GetAllFoods().Count(),
+                NumUsers = TheRepository.GetApiUsers().Count()
+            };
+
+            return Request.CreateResponse(HttpStatusCode.OK, results);
+        }
+
+        //   [Route("api/stats/{id}")]
+        public HttpResponseMessage Get(int id)
         {
             var results = new
             {
