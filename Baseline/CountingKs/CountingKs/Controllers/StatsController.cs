@@ -15,7 +15,7 @@ namespace CountingKs.Controllers
         {
         }
 
-     //   [Route("")]
+     //   [Route("")] // this needs to be tehre even if you dont want the non standard routes.  empty one should be there on each routes.
         public HttpResponseMessage Get()
         {
             var results = new
@@ -27,8 +27,20 @@ namespace CountingKs.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, results);
         }
 
-        //   [Route("~/api/stat/{id}")] // now this route will use this entry route where as rest of them will use the standard one defined at controller level.
+        //   [Route("~/api/stat/{id:integer}")] // now this route will use this entry route where as rest of them will use the standard one defined at controller level.
         public HttpResponseMessage Get(int id)
+        {
+            var results = new
+            {
+                NumFoods = TheRepository.GetAllFoods().Count(),
+                NumUsers = TheRepository.GetApiUsers().Count()
+            };
+
+            return Request.CreateResponse(HttpStatusCode.OK, results);
+        }
+
+        //   [Route("~/api/stat/{name:alpha}")]
+        public HttpResponseMessage Get(string name)
         {
             var results = new
             {
