@@ -27,7 +27,7 @@ namespace CountingKs.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, results);
         }
 
-        //   [Route("{id}")]
+        //   [Route("~/api/stat/{id}")] // now this route will use this entry route where as rest of them will use the standard one defined at controller level.
         public HttpResponseMessage Get(int id)
         {
             var results = new
