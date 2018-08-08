@@ -8,13 +8,14 @@ using System.Web.Http;
 
 namespace CountingKs.Controllers
 {
+    //[RoutePrefix("api/stats")] // optimization of routes.
     public class StatsController : BaseApiController
     {
         public StatsController(ICountingKsRepository repo) :base(repo)
         {
         }
 
-     //   [Route("api/stats")]
+     //   [Route("")]
         public HttpResponseMessage Get()
         {
             var results = new
@@ -26,7 +27,7 @@ namespace CountingKs.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, results);
         }
 
-        //   [Route("api/stats/{id}")]
+        //   [Route("{id}")]
         public HttpResponseMessage Get(int id)
         {
             var results = new
