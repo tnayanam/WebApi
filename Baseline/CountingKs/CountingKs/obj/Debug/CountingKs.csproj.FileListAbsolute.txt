@@ -208,7 +208,6 @@ C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\En
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\Microsoft.Data.Edm.dll
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\Microsoft.Data.OData.dll
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\Microsoft.Web.WebPages.OAuth.dll
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\Newtonsoft.Json.dll
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\Ninject.dll
@@ -411,3 +410,4 @@ C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\Ca
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\CacheCow.Server.xml
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\CacheCow.Server.EntityTagStore.SqlServer.dll
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\CacheCow.Server.EntityTagStore.SqlServer.xml
+C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs\bin\Microsoft.Web.Helpers.dll

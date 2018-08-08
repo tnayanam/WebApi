@@ -15,6 +15,7 @@ public static class WebApiConfig
 {
     public static void Register(HttpConfiguration config)
     {
+       // config.MapHttpAttributeRoutes();  // this needs to be added.
         // suppose you want the controller to hit is foods but the url you want is api/nutrition/foods then do below
         // changing the name of optional parameter {id} - {foodid} needs changes in the controller methods too
         // http://localhost:8901/api/nutrition/foods?includeMeasures=false here this works fine even though it does not match the actual {foodid} as paramter. 
@@ -73,8 +74,8 @@ public static class WebApiConfig
         config.Filters.Add(new RequireHttpsAttribute());
 #endif
         // replaces the default controller selector by ours.
-        config.Services.Replace(typeof(IHttpControllerSelector),
-            new CountingKsControllerSelector(config));
+        //config.Services.Replace(typeof(IHttpControllerSelector),
+        //    new CountingKsControllerSelector(config));
         // cache
         
         var connString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
@@ -98,3 +99,4 @@ public static class WebApiConfig
 // database to store the etag execute the script in SQL Server
 // located at location:" C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\packages\CacheCow.Server.EntityTagStore.SqlServer.0.4.1\scripts
 // and now when you make the request the etag will not jave "w/" because now its persistece
+// For web api 2 to work we need to modify some project assemblies so I have skipped that. 

@@ -33,4 +33,3 @@ C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\WebApi\Baseline\CountingKs\CountingKs
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\WebApi\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.dll
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\WebApi\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.pdb
 C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\WebApi\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.csprojResolveAssemblyReference.cache
-C:\Users\Dev-10\Desktop\Demo\Webapi\WebApi\Baseline\CountingKs\CountingKs.Data\obj\Debug\CountingKs.Data.csprojResolveAssemblyReference.cache
