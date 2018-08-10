@@ -34,7 +34,7 @@ namespace HelloTemplate.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public void Post([FromBody]string value) // fiddler test for post
         {
             data.Add(value);
         }
