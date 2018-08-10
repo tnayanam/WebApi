@@ -6,11 +6,13 @@ using System.Web.Http;
 
 namespace HelloWebApiDemo
 {
-    //public class HelloApiController:ApiController
-    //{
-    //    public string Get()
-    //    {
-    //        return "Hello";
-    //    }
-    //}
+    public class HelloApiController : ApiController
+    {
+        public string Get()
+        {
+            return "Hello";
+        }
+    }
 }
+
+// link : https://app.pluralsight.com/player?course=aspnetwebapi&author=jon-flanders&name=aspnetwebapi-m1-introduction&clip=5&mode=live

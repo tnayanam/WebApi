@@ -12,12 +12,12 @@ namespace HelloWebApiDemo
     public class Global : System.Web.HttpApplication
     {
 
-        //protected void Application_Start(object sender, EventArgs e)
-        //{
-        //    GlobalConfiguration.Configuration.Routes.Add(
-        //        "default",
-        //        new HttpRoute("{controller}"));
-        //}
+        protected void Application_Start(object sender, EventArgs e)
+        {
+            GlobalConfiguration.Configuration.Routes.Add(
+                "default",
+                new HttpRoute("{controller}"));
+        }
 
         protected void Session_Start(object sender, EventArgs e)
         {
