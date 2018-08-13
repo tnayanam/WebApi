@@ -10,6 +10,7 @@ namespace TrainingCompany.Controllers
     [Authorize]
     public class ValuesController : ApiController
     {
+        [HttpGet]
         // GET api/values
         public IEnumerable<string> Get()
         {
