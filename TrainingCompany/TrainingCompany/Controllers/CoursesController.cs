@@ -23,6 +23,11 @@ namespace TrainingCompany.Controllers
             return ret;
         }
 
+        public course Get(int id)
+        {
+            var ret = courses.Where(c => c.id == id).FirstOrDefault();
+            return ret;
+        }
 
     }
 
