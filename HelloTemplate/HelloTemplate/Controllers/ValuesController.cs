@@ -39,9 +39,12 @@ namespace HelloTemplate.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value) // fiddler test for post
+        public HttpResponseMessage Post([FromBody]string value) // fiddler test for post
         {
             data.Add(value);
+            var msg = Request.CreateResponse(HttpStatusCode.Created);
+            msg.Headers.Location = new Uri(Request.RequestUri + data.Count.ToString());
+            return msg;
         }
 
         // PUT api/values/5
