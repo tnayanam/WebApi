@@ -28,9 +28,14 @@ namespace HelloTemplate.Controllers
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public HttpResponseMessage Get(int id)
         {
-            return data[id];
+            if (data.Count > id)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, data[id]);
+            }
+            else
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Item not found.");
         }
 
         // POST api/values
