@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Net;
+using System.Net.Http;
 
 
 namespace TrainingCompany.Controllers
@@ -25,10 +26,19 @@ namespace TrainingCompany.Controllers
             return ret;
         }
 
-        public course Get(int id)
+        public HttpResponseMessage Get(int id)
         {
             var ret = courses.Where(c => c.id == id).FirstOrDefault();
-            return ret;
+            HttpResponseMessage msg = null;
+            if(ret == null)
+            {
+                msg = Request.CreateResponse(HttpStatusCode.NotFound, "Course could not be found");
+            }
+            else
+            {
+                msg = Request.CreateResponse<course>(HttpStatusCode.OK, ret); // more Rest type
+            }
+            return msg;
         }
 
         public void Put(int id, [FromBody]course co)
@@ -37,10 +47,13 @@ namespace TrainingCompany.Controllers
             ret.title = co.title;
         }
 
-        public void Post([FromBody] course c)
+        public HttpResponseMessage Post([FromBody] course c)
         {
             c.id = courses.Count;
             courses.Add(c);
+            var msg = Request.CreateResponse(HttpStatusCode.Created);
+            msg.Headers.Location = new Uri(Request.RequestUri + c.id.ToString()); // this is REST convention!
+            return msg;
         }
 
         public void Delete(int id)
