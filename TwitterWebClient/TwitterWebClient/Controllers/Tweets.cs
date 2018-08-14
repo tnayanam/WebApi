@@ -12,7 +12,7 @@ namespace TwitterWebClient.Controllers
     }
     public class Tweet
     {
-        [JsonProperty("from_user")]
+        [JsonProperty("from_user")] //  this name is in json response..
         public string UserName { get; set; }
         public string TweetText { get; set; }
     }
