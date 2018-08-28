@@ -24,4 +24,43 @@ Security of an API
 			  - Enable Cross-Origin Resource Sharing (CORS)
   - Authorization/Authentication
     
+
+=======================================================================================================================
+--Web Hooks--
+So its more like an event. So suppose we have a main application which needs something from an helper api which can cahnge its data.
+So one way is everytime we run main.exe we need to call the helper api but helper api might still be same so we dont need to call that 
+at this very moment.
+So now there is a concept called Web hooks, where API will itself call an entry point when something changes in the helper api
+So first we need to go to api and put our URL (from parent solution) which we want to get hit.
+But before that obviously we want our laptop localhost to be live (parent) so lets try ngrok software
+go to the https://dashboard.ngrok.com/get-started
+and download and follow the steps:
+ask puran if get stuck, in commnd prompt remove the ./ before running the n grok command
+and then run your parent local MVC application
+address is for example: http://localhost:51777 => leave it running
+open the ngrok console and then type this : ngrok http [port] -host-header="localhost:[port]"
+
+https://stackoverflow.com/questions/30535336/exposing-localhost-to-the-internet-via-tunneling-using-ngrok-http-error-400
+
+this will opent he port, Now suppose your local parent is listening to 
+http://localhost:51777/api/values
+[copy the URL provided by ngrok console]/api/values this should hit your local breakpoint
+so far so good.
+Now go to crowdin/helper api and see what parameters it will be sending
+example:
+project: project identifier;
+language: language code;
+file_id: file identifier;
+file: file name.
+
+once the ngrok has made your site live and your parent prohect is listening to that end point
+then do a translatio at crown in and this end point should get hit. 
+
+
+
+
+
+
+
+ 
 			

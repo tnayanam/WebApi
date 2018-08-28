@@ -14,7 +14,7 @@ namespace CallAPI
         static void Main(string[] args)
         {
             string createText = "Hello and Welcome" + Environment.NewLine;
-            File.WriteAllText(@"C:\Users\lenovo\Documents\VisualStudio 2015\Projects\WebApplication11\foo.txt", createText);
+            //File.WriteAllText(@"C:\Users\lenovo\Documents\VisualStudio 2015\Projects\WebApplication11\foo.txt", createText);
             Task.Run(() => CallHttp());
             Task.WaitAll();
             Task.WaitAny();
