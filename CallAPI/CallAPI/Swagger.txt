@@ -1,0 +1,15 @@
+So, Swagger helps us in API Documentation.
+So first go to nuget and run the command : install-package swashbuckle -version 5.2.1 this will install the nuget package: swagger and now in app_start
+you will find some Swagger.config file which you can change.
+
+For Seeing the comments that we put in api's do below:
+
+ c.IncludeXmlComments(GetXmlCommentsPath()); // uncomment it
+
+And add below:
+private static string GetXmlCommentsPath()
+{
+    return System.AppDomain.CurrentDomain.BaseDirectory + @"bin\Demo.xml";
+}
+
+and now if you add comments in your API it will show properly if you visit http://localhost:58887/swagger/ui/index  and it will tell all API DEtails there.
