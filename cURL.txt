@@ -1,0 +1,79 @@
+cURL: download 32 bit from http://www.confusedbycode.com/curl/#downloads
+And go to git bash or git cmd
+and type
+curl -V
+and it will all the versions.
+Now if you want to hit any url just type:
+curl https://jsonplaceholder.typicode.com/posts/3
+
+And it will give you all the outputs.
+
+Now suppose you want to see the HEADER information that is getting received.
+curl -i https://jsonplaceholder.typicode.com/posts/3
+
+Response:
+content-type: application/json; charset=utf-8
+content-length: 283
+set-cookie: __cfduid=d3b516f6a187e5184bed236d4e72f78b01535727668; expires=Sat, 31-                                                                                                                                                                                             Aug-19 15:01:08 GMT; path=/; domain=.typicode.com; HttpOnly
+x-powered-by: Express
+vary: Origin, Accept-Encoding
+access-control-allow-credentials: true
+cache-control: public, max-age=14400
+pragma: no-cache
+expires: Fri, 31 Aug 2018 19:01:08 GMT
+x-content-type-options: nosniff
+etag: W/"11b-USacuIw5a/iXAGdNKBvqr/TbMTc"
+via: 1.1 vegur
+cf-cache-status: HIT
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/b                                                                                                                                                                                             eacon/expect-ct"
+server: cloudflare
+cf-ray: 45305ee91f453888-ATL
+
+{
+  "userId": 1,
+  "id": 3,
+  "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+  "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvolu                                                                                                                                                                                             ptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labor                                                                                                                                                                                             e et velit aut"
+}
+
+curl --head https://jsonplaceholder.typicode.com/posts/3 : It will give you just the header and no data associated with it.
+
+Now suppose you want the output to be in a file:
+
+curl -o test.txt https://jsonplaceholder.typicode.com/posts/
+
+now this will create a file test.txt and add the output in that file.
+
+To view the content use "cat {filename}"
+
+curl -O https://jsonplaceholder.typicode.com/posts
+
+Above command will download the content to a file name posts
+
+Now suppose you want to make a POST request use below:
+
+ curl --data "title=Hello&body=Hello World" https://jsonplaceholder.typicode.com/posts
+ 
+ raw data was like :
+ 
+   {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  }
+  
+  Now supose you want to make a PUT Request, then you need below:
+  
+  curl -X PUT -d "body=World" https://jsonplaceholder.typicode.com/posts/3
+  
+  Delete request:
+  $ curl -X DELETE https://jsonplaceholder.typicode.com/posts/3
+
+  
+  
+  
+
+  
+
+
